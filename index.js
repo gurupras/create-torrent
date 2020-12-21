@@ -226,6 +226,7 @@ function getPieceList (files, pieceLength, cb, onProgress) {
   let ended = false
 
   let totalSize = 0
+  let processed = 0
   for (const file of files) {
     totalSize += file.length
   }
@@ -249,10 +250,11 @@ function getPieceList (files, pieceLength, cb, onProgress) {
       pieces[i] = hash
       remainingHashes -= 1
       maybeDone()
+      processed += chunk.length
+      onProgress && onProgress(processed, totalSize)
     })
     remainingHashes += 1
     pieceNum += 1
-    onProgress && onProgress(length, totalSize)
   }
 
   function onEnd () {
