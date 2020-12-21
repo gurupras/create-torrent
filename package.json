@@ -1,17 +1,16 @@
 {
-  "name": "create-torrent",
+  "name": "@gurupras/create-torrent",
   "description": "Create .torrent files",
   "version": "4.4.2",
   "author": {
-    "name": "WebTorrent LLC",
-    "email": "feross@webtorrent.io",
-    "url": "https://webtorrent.io"
+    "name": "Guru Prasad Srinivasa",
+    "email": "gurupras@buffalo.edu"
   },
   "bin": {
     "create-torrent": "./bin/cmd.js"
   },
   "bugs": {
-    "url": "https://github.com/webtorrent/create-torrent/issues"
+    "url": "https://github.com/gurupras/create-torrent/issues"
   },
   "browser": {
     "./get-files.js": false
@@ -57,7 +56,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/webtorrent/create-torrent.git"
+    "url": "git://github.com/gurupras/create-torrent.git"
   },
   "scripts": {
     "test": "standard && tape test/*.js"
@@ -67,19 +66,5 @@
       "Blob",
       "FileList"
     ]
-  },
-  "funding": [
-    {
-      "type": "github",
-      "url": "https://github.com/sponsors/feross"
-    },
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/feross"
-    },
-    {
-      "type": "consulting",
-      "url": "https://feross.org/support"
-    }
-  ]
+  }
 }
