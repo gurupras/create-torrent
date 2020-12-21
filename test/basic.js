@@ -205,3 +205,21 @@ test('implicit torrent name from file names with slashes in them', t => {
     t.equal(parsedTorrent.files[1].path, path.join('My Cool Folder', 'My Cool File 2'))
   })
 })
+
+test('triggers intermediate progress updates via opts.onProgres', t => {
+  t.plan(2)
+
+  const buf1 = Buffer.from('Super long file')
+  buf1.name = 'My Cool File 1'
+
+  createTorrent([buf1], (err, torrent) => {
+    t.error(err)
+  }, {
+    pieceLength: 1,
+    onProgress (processed, total) {
+      if (processed === total) {
+        t.ok(total)
+      }
+    }
+  })
+})
